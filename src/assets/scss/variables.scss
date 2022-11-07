@@ -1,0 +1,35 @@
+$txt-color: #3D2800;
+$txt-color-brown: #BF9D59;
+$brown-light: #D7B26A;
+
+/* Media queries for responsive
+---------------------------- */
+@mixin r-min($screen) {
+  @media only screen and (min-width: $screen+'px') {
+    @content;
+  }
+}
+
+@mixin r-max($screen) {
+  @media only screen and (max-width: $screen+'px') {
+    @content;
+  }
+}
+
+@mixin r-min-max($from, $to) {
+  @media only screen and (min-width: $from+'px') and (max-width: $to+'px') {
+    @content;
+  }
+}
+
+@mixin r-max-height($screen) {
+  @media only screen and (max-height: $screen+'px') {
+    @content;
+  }
+}
+
+@mixin r-min-height($screen) {
+  @media only screen and (min-height: $screen+'px') {
+    @content;
+  }
+}
