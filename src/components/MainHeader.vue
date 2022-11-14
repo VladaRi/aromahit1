@@ -177,6 +177,7 @@
 
   @include r-max(1500) {
     height: 62px;
+    padding: 0 24px 0 80px;
   }
 
   @include r-max(900) {

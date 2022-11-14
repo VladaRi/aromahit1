@@ -1,6 +1,6 @@
 <template>
   <div class="main-default">
-    <main-header @click="showModal"/>
+    <main-header @click="showModal" v-if="false"/>
     <div class="content">
       <router-view
         :showSuccessModalWindow2="showSuccessModalWindow2"
@@ -9,7 +9,7 @@
         @clickOnCatalogBtn="showCatalogModal"
       />
     </div>
-    <main-footer />
+    <main-footer v-if="false" />
     <modal-window
       :showModalWindow="showModalWindow"
       @close="showModalWindow = false"
