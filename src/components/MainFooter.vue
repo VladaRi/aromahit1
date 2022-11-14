@@ -16,9 +16,13 @@
       </nav>
       <div class="blc">
         <span class="footer-title">КОНТАКТНА ІНФОРМАЦІЯ</span>
-        <a href="tel:+380505772372" class="menu-item">+380505772372</a>
+        <!--<a href="tel:+380505772372" class="menu-item">+380505772372</a>-->
         <a href="tel:+380681106968" class="menu-item">+380681106968</a>
         <a href="mailto:Tradearomaxit@gmail.com" class="menu-item">tradearomaxit@gmail.com</a>
+        <div class="menu-item">
+          <span class="menu-item__strong">Графік роботи:</span><br>
+          <span>пн-сб: 10-17<br> нд: вихідний</span>
+        </div>
         <a class="menu-item agreement">Угода користувача</a>
       </div>
     </div>
@@ -144,6 +148,10 @@
     &.agreement {
       display: inline-block;
       border-bottom: 1px solid $txt-color;
+    }
+
+    &__strong {
+      font-weight: 700;
     }
 
     @include r-max(1500) {
