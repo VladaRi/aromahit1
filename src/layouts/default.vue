@@ -71,7 +71,7 @@
 <style lang="scss">
   @import '../assets/scss/main';
 
-  .content {
+  /*.content {
     padding-top: 72px;
 
     @include r-max(1500) {
@@ -81,5 +81,5 @@
     @include r-max(480) {
       padding-top: 55px;
     }
-  }
+  }*/
 </style>
