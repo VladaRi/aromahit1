@@ -216,3 +216,26 @@
     }
   }
 }
+
+.btn {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  justify-content: center;
+  padding: 5px 10px;
+  border: 1px solid #3D2800;
+  border-radius: 10px;
+  font-size: 16px;
+  max-width: 150px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.main-input {
+  padding: 5px;
+  border: 1px solid #3D2800;
+
+  &.textarea {
+    width: 100%;
+  }
+}

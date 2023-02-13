@@ -1,36 +1,40 @@
 <template>
-  <div>
-    <main-banner @click="$emit('clickOnCatalogBtn')" />
-    <about-us />
-    <catalog
-      @click="$emit('clickOnCatalogBtn')"
-    />
-    <our-benefits />
-    <cooperation/>
-    <form-blc
-      :showSuccessModalWindow2="showSuccessModalWindow2"
-      @openSuccessModal2="$emit('openSuccessModal2')"
-      @closeSuccessModal2="$emit('closeSuccessModal2')"
-    />
+  <div class="home">
+    <h1 class="title">Обери фільм</h1>
+    <div
+      class="btn"
+      @click="$router.push({name: 'films'})"
+    >
+      Обрати фільм</div>
   </div>
 </template>
 
 <script>
-  import MainBanner from '../components/MainBanner'
-  import AboutUs from '../components/AboutUs'
-  import Catalog from '../components/Catalog'
-  import OurBenefits from '../components/OurBenefits'
-  import Cooperation from '../components/Cooperation'
-  import FormBlc from '../components/FormBlc'
+
   export default {
     name: 'HomePage',
-    components: { FormBlc, Cooperation, OurBenefits, Catalog, AboutUs, MainBanner },
+
     props: {
-      showSuccessModalWindow2: false
+
     }
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    .title {
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      margin: 0 auto;
+    }
+  }
 
 </style>

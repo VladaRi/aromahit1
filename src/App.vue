@@ -12,5 +12,11 @@
 </script>
 
 <style lang="scss">
+  html, body {
+    height: 100%;
+  }
 
+  body {
+
+  }
 </style>
