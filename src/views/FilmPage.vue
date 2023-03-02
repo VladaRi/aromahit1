@@ -28,6 +28,23 @@
         <p class="section__description">{{ film.directors.join(', ') }}</p>
       </div>
 
+
+      <div class="line" />
+      <div class="review">
+        <h3>Смотрели данный фильм ?</h3>
+        <p>Оставьте отзыв:</p>
+        <ul>
+          <li
+            v-for="reaction in reactions"
+            :key="reaction.id"
+          >
+            <button type="button" class="btn btn-outline-light">
+              {{ reaction.title }}
+            </button>
+          </li>
+        </ul>
+      </div>
+
     </div>
   </div>
 
@@ -35,6 +52,7 @@
 
 <script>
   import films from '../mocks/films'
+  import { mapGetters } from 'vuex'
 
   export default {
     data() {
@@ -42,6 +60,14 @@
         film: null,
         changeDscrActive: false,
         newDscr: ''
+      }
+    },
+    computed: {
+      ...mapGetters({
+        getReactions: 'reactions/getReactions'
+      }),
+      reactions() {
+        return this.getReactions
       }
     },
     created() {
@@ -106,6 +132,49 @@
     .btn {
       margin: 10px 0 10px;
       border: 1px solid #EB5804;
+    }
+    .line {
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #EB5804 0%, rgba(0,0,0,0) 90%);
+      margin-bottom: 45px;
+    }
+    .review {
+      h3 {
+        font-size: 26px;
+        font-weight: 500;
+        margin-bottom: 10px;
+        /*color: #ffffff;*/
+      }
+
+      p {
+        font-weight: 600;
+        font-size: 20px;
+        color: #EB5804;
+      }
+
+      ul {
+        padding-left: 0;
+        list-style: none;
+        display: flex;
+
+        li {
+          margin-right: 15px;
+        }
+      }
+
+      .btn {
+        border: 1px solid #000;
+        background-color: white;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
     }
   }
 </style>

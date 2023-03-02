@@ -16,39 +16,45 @@
         <button
           type="button"
           class="btn btn-outline-light btn-lg"
-          @click="changeUserState"
+          @click="onAuthBtnClick"
         >
           {{ auth ? 'Выйти' : 'Войти' }}
         </button>
       </div>
     </div>
+    <auth-modal
+      v-if="isAuthModalOpen"
+      @close="isAuthModalOpen = false"
+    ></auth-modal>
   </header>
 
 </template>
 
 <script>
+  import AuthModal from './AuthModal'
   export default {
     name: 'MainHeader',
+    components: { AuthModal },
     data () {
       return {
-        auth: false
+        auth: false,
+        isAuthModalOpen: false
       }
     },
-    mounted() {
-      this.auth = localStorage.getItem('auth')
+    // mounted() {
+    //   this.auth = localStorage.getItem('auth')
+    // },
+
+    created() {
+      this.setUser(JSON.parse(localStorage.getItem('user')))
     },
+
     watch: {
 
     },
     methods: {
-      changeUserState() {
-        if (this.auth) {
-          localStorage.removeItem('auth')
-          this.$router.push({ name: 'home'})
-        } else {
-          localStorage.setItem('auth', true)
-          this.auth = true
-        }
+      onAuthBtnClick() {
+        this.isAuthModalOpen = true
       }
     }
   }

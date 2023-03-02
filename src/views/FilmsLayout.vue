@@ -8,9 +8,20 @@
 
 <script>
   import MainHeader from '../components/MainHeader'
+  import { mapActions } from 'vuex'
+
   export default {
     name: 'FilmsLayout',
-    components: { MainHeader }
+    components: { MainHeader },
+    methods: {
+      ...mapActions({
+        loadReactions: 'reactions/loadReactions'
+      }),
+    },
+    created () {
+      this.loadReactions(1000)
+      // this.$store.dispatch('loadReactions', 1000)
+    }
   }
 </script>
 

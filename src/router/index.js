@@ -18,7 +18,7 @@ const routes = [
   },
   {
     path: "/films",
-    name: "filmsLayout",
+    // name: "filmsLayout",
     component: FilmsLayout,
     children: [
       {
